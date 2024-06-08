@@ -1,0 +1,83 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import ListEntry from "../components/ListEntry.astro";
+import PostSideBar from "../components/PostSideBar.astro";
+import Footer from "../components/Footer.astro";
+import SITE_DESCRIPTION from "../consts";
+import { getCollection } from "astro:content";
+
+let posts = [];
+
+const writingCollection = await getCollection("writing");
+const booksCollection = await getCollection("books");
+const peaceCorpsCollection = await getCollection("peace-corps");
+posts.push(...writingCollection);
+posts.push(...booksCollection);
+posts.push(...peaceCorpsCollection);
+
+posts = posts
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 5);
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title="Home" description={SITE_DESCRIPTION} />
+    <style>
+      h2 + ul {
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+        gap: var(--space-xs-s);
+        padding: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <Header title="Westley Winks" />
+
+    <main>
+      <section>
+        <h2>Recent posts</h2>
+        <ul>
+          {posts.map((post) => <ListEntry entry={post} />)}
+        </ul>
+      </section>
+
+      <section>
+        <h2>Who am I?</h2>
+        <p>
+          I'm Westley Winks. Learning is my passion and this website is one
+          manifestation of that.
+        </p>
+
+        <h2 id="contact">Can I contact you?</h2>
+        <p>Please do. You can find me on the following:</p>
+        <ul>
+          <li>
+            <a
+              href="mailto://websitecontact.hush341@passmail.net"
+              target="_blank">Email me</a
+            >
+          </li>
+          <li><a href="https://social.lol/@ww" target="_blank">Mastodon</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/westley-winks" target="_blank"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/Westley-Winks" target="_blank">GitHub</a
+            >
+          </li>
+          <li>
+            <a href="https://matrix.to/#/@ww:omg.lol" target="_blank">Matrix</a>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

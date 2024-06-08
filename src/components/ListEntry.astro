@@ -1,0 +1,50 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+const { entry } = Astro.props;
+---
+
+<li>
+  <a href={`/${entry.collection}/${entry.slug}`}>
+    <h2>{entry.data.title}</h2>
+  </a>
+  <time datetime={entry.data.date.toISOString()}>
+    {entry.data.date.toISOString().slice(0, 10)}
+  </time>
+  <p>{entry.data.summary ? entry.data.summary : entry.data.description}</p>
+</li>
+
+<style>
+  a::after {
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  h2 {
+    color: var(--lk-1);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  li {
+    background: var(--bg-2);
+    padding: 0 var(--space-s-m);
+    list-style-type: none;
+    flex: 1 1 150px;
+    position: relative;
+  }
+
+  li:hover {
+    border: var(--ac-1) solid;
+  }
+</style>

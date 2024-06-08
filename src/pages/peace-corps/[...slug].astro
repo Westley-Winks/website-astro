@@ -1,0 +1,22 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import BlogPost from "../../layouts/BlogPost.astro";
+import Disclaimer from "../../components/Disclaimer.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("peace-corps");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+type Props = CollectionEntry<"peace-corps">;
+
+const { post } = Astro.props;
+const { Content, headings } = await post.render();
+---
+
+<BlogPost {...post.data} headings={headings}>
+  <Content />
+  <Disclaimer />
+</BlogPost>

@@ -1,0 +1,46 @@
+---
+const today = new Date();
+---
+
+<footer>
+  <p>Your Most Humble and Obedient Servant</p>
+  <small
+    >&copy; {today.getFullYear()} Westley Winks. The conent of this page is licensed
+    under
+    <a
+      href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"
+      target="_blank"
+      rel="license noopener noreferrer"
+      style="display:inline-block;">CC BY 4.0</a
+    >
+  </small>
+  <div>
+    <a href="/">home</a> |
+    <a href="/now">now</a> |
+    <a href="/peace-corps/">peace corps</a> |
+    <a href="/writing/">writing</a> |
+    <a href="/books/">books</a>
+  </div>
+</footer>
+<style>
+  footer {
+    width: var(--width);
+    max-width: calc(100% - 2em);
+    margin: auto;
+    text-align: left;
+  }
+
+  p {
+    font-size: 0.8rem;
+    margin-bottom: 0rem;
+  }
+
+  div > a {
+    font-size: 0.8rem;
+  }
+
+  div {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+  }
+</style>

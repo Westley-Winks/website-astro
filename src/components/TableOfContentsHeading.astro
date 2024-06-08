@@ -1,0 +1,56 @@
+---
+const { heading } = Astro.props;
+---
+
+<li>
+  <a href={"#" + heading.slug}>
+    {heading.text}
+  </a>
+  {
+    heading.subheadings.length > 0 && (
+      <ul>
+        {heading.subheadings.map((subheading) => (
+          <Astro.self heading={subheading} />
+        ))}
+      </ul>
+    )
+  }
+</li>
+
+<style>
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+  }
+
+  li {
+    margin: 0;
+    padding: 0 7px;
+    line-height: 20px;
+    color: #369;
+    font-weight: normal;
+    border-left: 1px solid rgb(100, 100, 100);
+  }
+
+  li:last-child {
+    border-left: none;
+  }
+
+  li:before {
+    position: relative;
+    top: -0.3em;
+    height: 1em;
+    width: 12px;
+    color: white;
+    border-bottom: 1px solid rgb(100, 100, 100);
+    content: "";
+    display: inline-block;
+    left: -7px;
+  }
+
+  li:last-child:before {
+    border-left: 1px solid rgb(100, 100, 100);
+  }
+</style>

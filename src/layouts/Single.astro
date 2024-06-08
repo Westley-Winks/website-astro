@@ -1,0 +1,60 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import PostSideBar from "../components/PostSideBar.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import Footer from "../components/Footer.astro";
+
+const post = Astro.props;
+const frontmatter = post.frontmatter;
+const lastmod = new Date(frontmatter.lastmod);
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={frontmatter.title} description={frontmatter.description} />
+    <style>
+      main {
+        max-width: 100%;
+        margin: 2rem 0;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: start;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      article {
+        width: 100%;
+        min-width: 350px;
+        max-width: var(--width);
+        margin: auto;
+        flex: 3 3 0;
+      }
+
+      @media (max-width: 480px) {
+        main {
+          display: block;
+          padding: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <Header title={frontmatter.title} />
+    <main>
+      {
+        frontmatter.toc ? (
+          <PostSideBar headings={post.headings} title={frontmatter.title} />
+        ) : null
+      }
+      <article>
+        <slot />
+        <div>
+          Last updated on <FormattedDate date={lastmod} />
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

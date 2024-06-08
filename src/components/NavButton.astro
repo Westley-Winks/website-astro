@@ -1,0 +1,27 @@
+<button id="menu-button" aria-expanded="false">Navigation</button>
+
+<script>
+  /* Menu button */
+  (function () {
+    var button = document.getElementById("menu-button");
+    if (button) {
+      var menu = document.getElementById("tableOfContents");
+      button.addEventListener("click", function () {
+        var expanded = this.getAttribute("aria-expanded") === "true";
+        this.setAttribute("aria-expanded", !expanded);
+      });
+    }
+  })();
+</script>
+
+<style>
+  #menu-button {
+    display: none;
+  }
+
+  @media (max-width: 1010px) {
+    #menu-button {
+      display: block;
+    }
+  }
+</style>

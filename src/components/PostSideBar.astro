@@ -1,0 +1,109 @@
+---
+import TableOfContentsHeading from "../components/TableOfContentsHeading.astro";
+
+interface Props {
+  headings: Array<Object>;
+}
+
+function buildToc(headings) {
+  const toc = [];
+  const parentHeadings = new Map();
+  if (headings) {
+    headings.forEach((h) => {
+      const heading = { ...h, subheadings: [] };
+      parentHeadings.set(heading.depth, heading);
+      // Change 2 to 1 if your markdown includes your <h1>
+      if (heading.depth === 2) {
+        toc.push(heading);
+      } else {
+        parentHeadings.get(heading.depth - 1).subheadings.push(heading);
+      }
+    });
+    return toc;
+  }
+}
+
+const { headings, title } = Astro.props;
+const toc = buildToc(headings);
+---
+
+<aside>
+  <nav>
+    <button id="menu-button" aria-expanded="false">Table Of Contents</button>
+    <ul id="tableOfContents" class="tree">
+      <li><h1><a href="#">{title}</a></h1></li>
+      {toc.map((heading) => <TableOfContentsHeading heading={heading} />)}
+    </ul>
+  </nav>
+</aside>
+
+<style>
+  nav {
+    position: sticky;
+    top: 1.5rem;
+  }
+
+  a:visited {
+    color: var(--lk-1);
+  }
+
+  ul.tree {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  aside {
+    margin-bottom: 1rem;
+    flex: 1 1 min-content;
+    min-width: 150px;
+    max-width: 350px;
+  }
+
+  ul > li > h1 {
+    margin-bottom: 0;
+    color: var(--link-color);
+    font-weight: bold;
+  }
+
+  #tableOfContents {
+    display: block;
+  }
+
+  #menu-button {
+    display: none;
+    color: var(--lk-tx);
+    background: var(--bg-3);
+  }
+
+  @media (max-width: 480px) {
+    [aria-expanded="true"] + #tableOfContents {
+      display: block;
+    }
+
+    #menu-button {
+      display: block;
+      padding: 0.6rem 0.8rem;
+      margin: 1rem 0.4rem;
+      border-radius: 25px;
+    }
+
+    #tableOfContents {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  /* Menu button */
+  (function () {
+    var button = document.getElementById("menu-button");
+    if (button) {
+      var menu = document.getElementById("tableOfContents");
+      button.addEventListener("click", function () {
+        var expanded = this.getAttribute("aria-expanded") === "true";
+        this.setAttribute("aria-expanded", !expanded);
+      });
+    }
+  })();
+</script>

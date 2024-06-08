@@ -1,0 +1,13 @@
+---
+import List from "../../layouts/List.astro";
+import ListEntry from "../../components/ListEntry.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("peace-corps")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<List collection="Peace Corps" description="My musings.">
+  {posts.map((post) => <ListEntry entry={post} />)}
+</List>

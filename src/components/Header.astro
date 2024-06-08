@@ -1,0 +1,33 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../consts";
+
+const { title } = Astro.props;
+---
+
+<header>
+  <a href="/">{title}</a>
+  <nav>
+    <HeaderLink href="/now">Now</HeaderLink>
+    <HeaderLink href="/peace-corps">Peace Corps</HeaderLink>
+    <HeaderLink href="/writing">Writing</HeaderLink>
+    <HeaderLink href="/books">Books</HeaderLink>
+  </nav>
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: var(--width);
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  header > a {
+    font-size: 2rem;
+    text-decoration: none;
+  }
+</style>
