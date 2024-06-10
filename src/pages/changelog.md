@@ -17,6 +17,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## 2024-06-10
 
+- Fixed link on `/now` page
+- Changed `Who am I?` section on home page to show my core values
 - Fixed styling to target `code` in list items as well
 - Added [this changelog](/changelog)
 - Added [Creating Something](/writing/creating-something) post

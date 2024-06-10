@@ -26,7 +26,7 @@ This is a tough one but it has been the most effective project I've been a part 
 
 ## Writing Book Notes
 
-I have been having a blast with this. I had quite a bit of free time last summer and was reading a lot. I wanted some way to engage more with what I was reading and not forget the things that I learn. I read almost exclusively on my Kindle and highlight and note things as I read. At the end, I use my custom Python script to extract all those notes and put them into a markdown file. Then I go through the highlights and write more structured notes in Obsidian and [post them to my website]({{< relref "books" >}}). For non-fiction, I try my best to put things in my own words and bold the really important bits to make the note scannable with the eyes.
+I have been having a blast with this. I had quite a bit of free time last summer and was reading a lot. I wanted some way to engage more with what I was reading and not forget the things that I learn. I read almost exclusively on my Kindle and highlight and note things as I read. At the end, I use my custom Python script to extract all those notes and put them into a markdown file. Then I go through the highlights and write more structured notes in Obsidian and [post them to my website](/books). For non-fiction, I try my best to put things in my own words and bold the really important bits to make the note scannable with the eyes.
 
 For fiction, I do more of a book review structure and am loving it. I hadn't written anything for a fiction book since high school and absolutely hated it then. I use a rating system called [CAWPILE](https://kristinkravesbooks.com/2020/09/14/cawpile-rating-system/) that gives me a nice structure that I need to think more deeply about the fiction I am reading.
 
