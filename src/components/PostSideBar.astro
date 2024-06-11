@@ -28,9 +28,9 @@ const toc = buildToc(headings);
 ---
 
 <aside>
-  <nav>
-    <button id="menu-button" aria-expanded="false">Table Of Contents</button>
-    <ul id="tableOfContents" class="tree">
+  <button id="menu-button" aria-expanded="false">Table Of Contents</button>
+  <nav id="tableOfContents">
+    <ul class="tree">
       <li><h1><a href="#">{title}</a></h1></li>
       {toc.map((heading) => <TableOfContentsHeading heading={heading} />)}
     </ul>
@@ -41,6 +41,22 @@ const toc = buildToc(headings);
   nav {
     position: sticky;
     top: 1.5rem;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+  }
+
+  /* For browsers that support `scrollbar-*` properties */
+  @supports (scrollbar-width: auto) {
+    nav {
+      scrollbar-width: none;
+    }
+  }
+
+  /* Otherwise, use `::-webkit-scrollbar-*` pseudo-elements */
+  @supports selector(::-webkit-scrollbar) {
+    nav::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   a:visited {

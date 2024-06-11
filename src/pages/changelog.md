@@ -1,6 +1,6 @@
 ---
 description: "Changelog for my website."
-lastmod: 2024-06-10
+lastmod: 2024-06-11
 layout: ../layouts/Single.astro
 title: Changelog
 toc: true
@@ -15,6 +15,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - `Removed` for now removed features or content.
 - `Fixed` for any typos or bug fixes.
 
+## 2024-06-11
+
+- Added scrollbar to table of content
+
 ## 2024-06-10
 
 - Fixed link on `/now` page
@@ -22,3 +26,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Fixed styling to target `code` in list items as well
 - Added [this changelog](/changelog)
 - Added [Creating Something](/writing/creating-something) post
+
+## 2024-06-09
+
+- Deployed my website!
