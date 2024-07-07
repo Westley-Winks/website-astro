@@ -1,6 +1,6 @@
 ---
 description: "Changelog for my website."
-lastmod: 2024-06-11
+lastmod: 2024-07-07
 layout: ../layouts/Single.astro
 title: Changelog
 toc: true
@@ -14,6 +14,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - `Changed` for changes in existing features or content.
 - `Removed` for now removed features or content.
 - `Fixed` for any typos or bug fixes.
+
+## 2024-07-07
+
+- Added [heyjohn: A Vision For A Better Social Media](/heyjohn) post
 
 ## 2024-06-11
 
