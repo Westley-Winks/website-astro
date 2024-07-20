@@ -15,6 +15,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - `Removed` for now removed features or content.
 - `Fixed` for any typos or bug fixes.
 
+## 2024-07-20
+
+- Added [Wellbeing Tools, or A Long Overdue Apology](/writing/wellbeing-tools)
+
 ## 2024-07-16
 
 - Added [weeknotes 2024W28](/writing/weeknotes-2024W28)
