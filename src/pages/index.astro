@@ -9,7 +9,9 @@ import { getCollection } from "astro:content";
 
 let posts = [];
 
-const writingCollection = await getCollection("writing");
+const writingCollection = await getCollection("writing", ({ slug }) => {
+  return !slug.startsWith("weeknotes");
+});
 const booksCollection = await getCollection("books");
 const peaceCorpsCollection = await getCollection("peace-corps");
 posts.push(...writingCollection);
