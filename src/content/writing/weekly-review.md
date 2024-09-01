@@ -49,9 +49,9 @@ Again, this is another place where "stuff" tends to pile up and get lost. I go t
 
 Inspired by [Julia Evans' blog post](https://jvns.ca/blog/brag-documents/), I write down all of my important accomplishments and activities I did in the previous week. [I wrote](/writing/brag-document-as-a-pcv/) in depth about this system.
 
-- [ ] **Balance ledger**
+- [ ] **Balance [ledger](/writing/finances-and-bookkeeping/)**
 
-I use [beancount](https://github.com/beancount/beancount) to track where every dollar or dirham of mine comes from and goes. I usually send myself a WhatsApp message whenever I buy something that includes the price and what it was. I collect all of these messages and properly put them into my ledger each week. I also check the balances on all of my accounts and make sure they agree with my ledger. I wrote about this system in depth as well.
+I use [beancount](https://github.com/beancount/beancount) to track where every dollar or dirham of mine comes from and goes. I usually send myself a WhatsApp message whenever I buy something that includes the price and what it was. I collect all of these messages and properly put them into my ledger each week. I also check the balances on all of my accounts and make sure they agree with my ledger. [I wrote](/writing/finances-and-bookkeeping/) about this system in depth as well.
 
 - [ ] **Backup files**
 

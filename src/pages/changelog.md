@@ -15,6 +15,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - `Removed` for now removed features or content.
 - `Fixed` for any typos or bug fixes.
 
+## 2024-09-01
+
+- Added [weeknotes 2024W35](/writing/weeknotes-2024W35)
+
+## 2024-08-21
+
+- Changed [Finances and Bookkeeping](/writing/finances-and-bookkeeping) by adding a section about accrual accounting
+
 ## 2024-08-18
 
 - Added [weeknotes 2024W33](/writing/weeknotes-2024W33)

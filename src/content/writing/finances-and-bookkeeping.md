@@ -6,7 +6,7 @@ slug: finances-and-bookkeeping
 lastmod: 2024-08-21
 publish: true
 tags:
- - plain text
+  - plain text
 title: Finances and Bookkeeping
 toc: true
 ---
@@ -34,7 +34,7 @@ There are four main account types that we can have: `Income`, `Expenses`, `Asset
 - **Income.** Things that you get in exchange for something else (usually you getting money in exchange for your time)
 - **Expenses.** Things that you give in exchange for something else (usually you giving money in exchange for goods and services)
 
-Income and expense both refer to an exchange of goods and services. Assets and liabilities are set amounts. The difference here is that assets and liabilities are absolute while income and expenses are relative. What I mean by that is that you are usually interested in the balance of an asset or liability account at *one moment in time* while you are interested in the *change between two points in time* in expenses or income accounts. (*How much money do I have in my checking account right now?* vs. *How much did I spend on toilet paper last month?*)
+Income and expense both refer to an exchange of goods and services. Assets and liabilities are set amounts. The difference here is that assets and liabilities are absolute while income and expenses are relative. What I mean by that is that you are usually interested in the balance of an asset or liability account at _one moment in time_ while you are interested in the _change between two points in time_ in expenses or income accounts. (_How much money do I have in my checking account right now?_ vs. _How much did I spend on toilet paper last month?_)
 
 ## The Tools (Plain Text Accounting and Beancount)
 
@@ -47,6 +47,7 @@ Let's say you put your entire financial life on Quicken. All your investments, e
 Funnily enough, a few weeks after I initially posted this, this exact thing happened. Mint, a popular bookkeeping and budgeting app by Intuit, announced that it will be shutting down at the turn of the year. Intuit decided that Mint wasn't worth it to keep it running so users have no choice but to move to another tool. They, of course, pushed users to move to their other tool in Credit Karma but this new one doesn't have the same budgeting tools that Mint did. You as a user get no say in this and are under a time limit before the service is inaccessible.
 
 > I am so legitimately upset about this. 12+ years of my financial history is about to be gone. My entire adult life.
+>
 > - u/NotEmmaStone
 
 A different (and, for me, preferable) approach is to maintain it all in **plain text**. This is text that you can open on any computer and you can read. It is letters and numbers put together in a cohesive order that you can understand rather than ones and zeros that only a computer can understand. Plain text will never change its pricing structure and it will never go out of business. Even if all computers disappeared off the face of the Earth, I could still print out my ledger onto physical paper and still be able to see and understand all of my financial data.
@@ -55,7 +56,7 @@ My whole financial life, all of my transactions, my entire ledger is written dow
 
 There are currently three main choices for plain text accounting software: [Ledger](https://ledger-cli.org/), [hledger](https://hledger.org/), and my choice [beancount](https://github.com/beancount/beancount). These are all open source projects written by lots of smart people. They are also all great choices but have different philosophies and rules that govern what they look like. Again, all these do is parse your ledger file and do cool calculations and reporting with it. I went with beancount because the syntax made the most sense to me and I really liked the documentation. Also because [Derek Sivers uses it](https://sive.rs/uses).
 
-I won't go deep into the details of beancount because there is already *excellent* [documentation](https://beancount.github.io/docs/index.html) out there. There are also lots of parts of beancount that add functionality that I just don't use. My ledger looks something like this:
+I won't go deep into the details of beancount because there is already _excellent_ [documentation](https://beancount.github.io/docs/index.html) out there. There are also lots of parts of beancount that add functionality that I just don't use. My ledger looks something like this:
 
 ```bash
 2023-09-20 * "Souq trip"
@@ -80,11 +81,11 @@ I won't go deep into the details of beancount because there is already *excellen
 	Assets:Peace-Corps:Annual-Leave-Days           2.00 PCDAYS
 ```
 
-Don't mind the account hierarchy yet (see below). In this snippet, I have three types of money, called **commodities**: American dollars, Moroccan dirhams, and Peace Corps leave days. Did I mention that [I'm a Peace Corps Volunteer and I live in Morocco?]({{< relref peace-corps >}})
+Don't mind the account hierarchy yet (see below). In this snippet, I have three types of money, called **commodities**: American dollars, Moroccan dirhams, and Peace Corps leave days. Did I mention that [I'm a Peace Corps Volunteer and I live in Morocco?](/peace-corps/)
 
 Each transaction (i.e. every time money changes hands) is given a date, an optional payee, and some narration text. Each line below that tells beancount which account it is and how much money is being added or subtracted from it and what kind of money it is. Importantly, I can go through my whole ledger and read, line by line, and understand all of my transactions. You will also notice that, according to the double entry accounting method, all of the commodities each sum to zero.
 
-Every week, as part of a more general weekly review session, I balance my ledger. I thought "balancing your checkbook" was just something old people did but I finally understand what they mean. I sit down and open up my ledger on my computer and input any pending transactions that I have from the week. Then, I generate a **balance statement** (more on in the reporting section) that shows me exactly how much money is currently in each account. I go on my various bank apps and verify that the number on my balance statement matches what the bank says I have to make sure I didn't miss any transactions (and neither did they). I also hand-count all of my cash. There is usually a discrepancy here because I almost exclusively use cash in my day-to-day life and make small purchases often. Sometimes I forget to write down small transations or just plain lose coins. In this case, I make a balance assertion in my ledger (*hey, ledger, I know that based on your calculations I should have this amount of money but I actually have this much*) and put the difference into an `Expenses:Uncategorized` account.
+Every week, as part of a more general weekly review session, I balance my ledger. I thought "balancing your checkbook" was just something old people did but I finally understand what they mean. I sit down and open up my ledger on my computer and input any pending transactions that I have from the week. Then, I generate a **balance statement** (more on in the reporting section) that shows me exactly how much money is currently in each account. I go on my various bank apps and verify that the number on my balance statement matches what the bank says I have to make sure I didn't miss any transactions (and neither did they). I also hand-count all of my cash. There is usually a discrepancy here because I almost exclusively use cash in my day-to-day life and make small purchases often. Sometimes I forget to write down small transations or just plain lose coins. In this case, I make a balance assertion in my ledger (_hey, ledger, I know that based on your calculations I should have this amount of money but I actually have this much_) and put the difference into an `Expenses:Uncategorized` account.
 
 ## Reporting
 
@@ -100,7 +101,7 @@ Now, as we saw above, every time you spend money on something, that money goes i
 
 The general consensus that I found online was to just track your expenses and figure it out as you go to develop meaningful expense categories. That didn't feel right to me. It made more sense to have a set structure from the get-go and push transactions into those as I go. So, I did some cherry-picking and came across [a whitepaper](https://unstats.un.org/unsd/classifications/unsdclassifications/#coicop) published by the United Nations Statistics Division. It is titled "Classification of Individual Consumption According to Purpose (COICOP) 2018."
 
-Basically, COICOP is an international standard to classify household expenditure. It is a framework that allows for all kinds of cool statistics to be calculated like CPI, living standards analysis, budget surveys, and stats related to food and tourism. It splits up household expenses into increasingly fine-grained categories starting from a division (*01 Food and non-alcoholic beverage*) to a group (*01.1 Food*) to classes (*01.1.1 Cereals and cereal products*) and further down to subclasses (*01.1.1.3 Bread and bakery products*). These are all organized by the purpose of the expense. The current 2018 revision has 15 divisions, 63 groups, 186 classes, and 338 subclass categories.
+Basically, COICOP is an international standard to classify household expenditure. It is a framework that allows for all kinds of cool statistics to be calculated like CPI, living standards analysis, budget surveys, and stats related to food and tourism. It splits up household expenses into increasingly fine-grained categories starting from a division (_01 Food and non-alcoholic beverage_) to a group (_01.1 Food_) to classes (_01.1.1 Cereals and cereal products_) and further down to subclasses (_01.1.1.3 Bread and bakery products_). These are all organized by the purpose of the expense. The current 2018 revision has 15 divisions, 63 groups, 186 classes, and 338 subclass categories.
 
 I decided to use COICOP for my personal finances for three reasons:
 
@@ -108,7 +109,7 @@ I decided to use COICOP for my personal finances for three reasons:
 - **Thought out.** Lots of people much smarter than me spent way more time than I ever will thinking about this.
 - **Standardized.** I can see how my expenses compare with others using the same standard (lots of stats available online).
 
-To avoid the problem of being too fine-grained, I opted for using the broad structure (chapter VIII in the whitepaper) which only goes down to groups meaning each expense category is defined by a three digit code *DD.G* where *DD* is the division number and *G* is the group number. I live a simple life and some expenses don't make sense for me so I cut them out of my chart of accounts but I can always add them back later. Using the entire broad structure, there are 52 possible "buckets" all of my expenses can fall into. With the accounts I don't need cut out, I actually have 20. My actual chart of accounts for my expenses looks like this:
+To avoid the problem of being too fine-grained, I opted for using the broad structure (chapter VIII in the whitepaper) which only goes down to groups meaning each expense category is defined by a three digit code _DD.G_ where _DD_ is the division number and _G_ is the group number. I live a simple life and some expenses don't make sense for me so I cut them out of my chart of accounts but I can always add them back later. Using the entire broad structure, there are 52 possible "buckets" all of my expenses can fall into. With the accounts I don't need cut out, I actually have 20. My actual chart of accounts for my expenses looks like this:
 
 ```bash
 `-- Expenses
@@ -188,7 +189,7 @@ To pay my friend back, I give them cash when I get back to my wallet.
 
 ## Lending and Borrowing Goods and Services (Accrual Accounting)
 
-You may have noticed in the last section that expenses happen when the *good or service is exchanged* not the actual money. When I went out for dinner, I accrued the expenses then and there, not when I paid back my friend later. This is the basis of [accrual accounting.](https://www.investopedia.com/terms/a/accrualaccounting.asp)
+You may have noticed in the last section that expenses happen when the _good or service is exchanged_ not the actual money. When I went out for dinner, I accrued the expenses then and there, not when I paid back my friend later. This is the basis of [accrual accounting.](https://www.investopedia.com/terms/a/accrualaccounting.asp)
 
 But what happens when I pay for something in advance? I've given someone money but I haven't received a good or service. The other party owes me but it's not money. For example, I see my landlord a few days before rent is due and I pay him then or I buy plane tickets now for a trip a few months later.
 
