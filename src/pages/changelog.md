@@ -15,6 +15,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - `Removed` for now removed features or content.
 - `Fixed` for any typos or bug fixes.
 
+## 2024-09-08
+
+- Added [weeknotes 2024W36](/writing/weeknotes-2024W36)
+
 ## 2024-09-01
 
 - Added [weeknotes 2024W35](/writing/weeknotes-2024W35)
