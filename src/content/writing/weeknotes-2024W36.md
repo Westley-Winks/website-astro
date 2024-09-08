@@ -30,7 +30,7 @@ But we'll see in the next few weeks if it comes to fruition.
 
 ## Attended some wedding festivities
 
-In personal news, my host brother in Morocco is getting married this weekend. I wrote about Moroccan weddings a while ago and this one was largely the same. Read that post if you want more depth and some pictures but this will be a short version.
+In personal news, my host brother in Morocco is getting married this weekend. [I wrote about Moroccan weddings](/peace-corps/the-weddings) a while ago and this one was largely the same. Read that post if you want more depth and some pictures but this will be a short version.
 
 There was a big lunch under a tent for nearly the whole neighborhood. As usual, we had sweets, nuts, dates, and tea while the Quran was being read and elders shared religious stories. After that, the first course of _djaj mhamr_ (grilled chicken with olives and preserved lemons) was served. That was taken away and replaced with _hem brquq_ (braised meat with figs). These are two of the best meals in Morocco. The last course was a fruit plate with grapes and canteloupe.
 
